@@ -1,0 +1,53 @@
+<div class="editor-toolbar">
+  <button (click)="applyStyle('bold')" title="Bold" data-command="bold">
+    <i class="fas fa-bold"></i>
+  </button>
+  <button (click)="applyStyle('italic')" title="Italic" data-command="italic">
+    <i class="fas fa-italic"></i>
+  </button>
+  <button
+    (click)="applyStyle('underline')"
+    title="Underline"
+    data-command="underline"
+  >
+    <i class="fas fa-underline"></i>
+  </button>
+  <button
+    (click)="applyParagraphStyle('p')"
+    title="Paragraph"
+    data-command="formatBlock"
+  >
+    <i class="fas fa-paragraph"></i>
+  </button>
+  <button
+    (click)="applyHeadingStyle('h1')"
+    title="Heading 1"
+    data-command="formatBlock"
+  >
+    <i class="fas fa-heading"></i>
+  </button>
+  <button
+    (click)="applyListStyle('insertUnorderedList')"
+    title="Bulleted List"
+    data-command="insertUnorderedList"
+  >
+    <i class="fas fa-list-ul"></i>
+  </button>
+  <button
+    (click)="changeTextSize('2')"
+    title="Text Size"
+    data-command="fontSize"
+  >
+    <i class="fas fa-text-height"></i>
+  </button>
+  <input
+    type="color"
+    (input)="changeTextColor($event)"
+    title="Text Color"
+  />
+</div>
+<div
+  class="editor-content"
+  contenteditable="true"
+  (input)="updateContent($event)"
+></div>

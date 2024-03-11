@@ -1,0 +1,155 @@
+.editor-toolbar {
+  display: flex;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+}
+
+.editor-toolbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.editor-toolbar button:hover {
+  background-color: #ddd;
+}
+
+.editor-content {
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.editor-content:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Toolbar button icons */
+.editor-toolbar button::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.editor-toolbar button.bold::before {
+  content: '\f032'; /* Bold icon */
+}
+
+.editor-toolbar button.italic::before {
+  content: '\f033'; /* Italic icon */
+}
+
+.editor-toolbar button.underline::before {
+  content: '\f0cd'; /* Underline icon */
+}
+.editor-toolbar button:hover {
+  background-color: #ddd;
+}
+
+/* New button icons */
+.editor-toolbar button i {
+  font-size: 14px;
+}
+
+.editor-toolbar button:not([title]) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.editor-content {
+  /* Existing styles */
+}
+
+/* New heading styles */
+.editor-content h1,
+.editor-content h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* custom-editor.component.css */
+
+:host {
+  display: block;
+  margin: 10px auto;
+  max-width: 600px; /* Adjust as needed */
+}
+
+.editor-toolbar,
+.editor-content {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.editor-toolbar {
+  background-color: #f3f3f3;
+  border-bottom: none;
+}
+
+.editor-toolbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+.editor-toolbar button:hover {
+  background-color: #ddd;
+}
+
+.editor-content {
+  min-height: 200px;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.editor-content:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Toolbar button icons */
+.editor-toolbar button i {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.editor-toolbar button.bold i::before {
+  content: '\f032'; /* Bold icon */
+}
+
+.editor-toolbar button.italic i::before {
+  content: '\f033'; /* Italic icon */
+}
+
+.editor-toolbar button.underline i::before {
+  content: '\f0cd'; /* Underline icon */
+}
+
+.editor-toolbar button.paragraph i::before {
+  content: '\f1dd'; /* Paragraph icon */
+}
+
+.editor-toolbar button.heading i::before {
+  content: '\f1dc'; /* Heading icon */
+}
+.editor-toolbar button.active {
+  background-color: #ddd !important;
+}
