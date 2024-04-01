@@ -1,14 +1,43 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, Input } from '@angular/core';
+import { EditorOptions } from './editor-options.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-custom-editor',
   standalone: true,
   templateUrl: './custom-editor.component.html',
   styleUrls: ['./custom-editor.component.css'],
+  imports: [CommonModule]
 })
 export class CustomEditorComponent {
   @ViewChild('editorContent') editorContent!: ElementRef;
 
+  defaultEditorOptions: EditorOptions = {
+    bold: true,
+    italic: true,
+    underline: true,
+    paragraph: true,
+    heading: true,
+    bulletedList: true,
+    textSize: true,
+    textColor: true,
+    numberedList: true,
+  };
+  @Input() editorOptions: EditorOptions = this.defaultEditorOptions;
+
+
+  mergedEditorOptions: EditorOptions = this.defaultEditorOptions;
+
+  constructor(){
+    this.mergedEditorOptions = { ...this.defaultEditorOptions, ...this.editorOptions };
+
+  }
+  ngOnChanges(): void {
+    // Merge default options with custom options whenever editorOptions input changes
+    this.mergedEditorOptions = { ...this.defaultEditorOptions, ...this.editorOptions };
+  }
+
+  
   applyStyle(style: string): void {
     document.execCommand(style, false, undefined);
     this.updateActiveButtons();
@@ -60,5 +89,13 @@ export class CustomEditorComponent {
   changeTextColor(event: any = ''): void {
     document.execCommand('foreColor', false, event.target.value);
     this.updateActiveButtons();
+  }
+  applyNumberedListStyle(): void {
+    document.execCommand('insertOrderedList', false, undefined);
+    this.updateActiveButtons();
+  }
+
+  rollback(): void {
+    document.execCommand('undo', false, undefined);
   }
 }
