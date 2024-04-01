@@ -1,6 +1,6 @@
 {
   "name": "angular-17-custom-text-editor",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "An Angular custom text editor component.",
   "main": "dist/index.js",
   "scripts": {
