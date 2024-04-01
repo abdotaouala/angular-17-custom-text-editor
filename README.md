@@ -7,4 +7,3 @@
 
 <img width="959" alt="image" src="https://github.com/abdotaouala/angular-custom-text-editor/assets/16292164/2aceb7df-783c-428d-b391-6533e20b0eea">
 
-
