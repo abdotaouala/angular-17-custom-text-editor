@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 import { EditorOptions } from './editor-options.interface';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-custom-editor',
