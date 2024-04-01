@@ -4,10 +4,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-custom-editor',
-  standalone: true,
   templateUrl: './custom-editor.component.html',
   styleUrls: ['./custom-editor.component.css'],
-  imports: [CommonModule]
 })
 export class CustomEditorComponent {
   @ViewChild('editorContent') editorContent!: ElementRef;

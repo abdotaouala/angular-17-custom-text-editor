@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import 'zone.js';
-import { CustomEditorComponent } from './editor/custom-editor.component';
+import { CustomEditorModule } from './editor/custom-editor.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CustomEditorComponent],
+  imports: [CustomEditorModule],
   template: `
-    <app-custom-editor (textChange)="name=$event"/>
+    <app-custom-editor (textChange)="text=$event"/>
   `,
 })
 export class App {
-  name = '';
+  text = '';
 }
 
 bootstrapApplication(App);
