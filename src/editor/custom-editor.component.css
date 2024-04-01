@@ -153,3 +153,18 @@
 .editor-toolbar button.active {
   background-color: #ddd !important;
 }
+.rollback-button {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.rollback-button:hover {
+  background-color: #ddd;
+}
+
+.rollback-button i {
+  color: #333;
+}
