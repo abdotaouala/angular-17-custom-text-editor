@@ -42,30 +42,26 @@ export class CustomEditorComponent {
   applyStyle(style: string): void {
     document.execCommand(style, false, undefined);
     this.updateActiveButtons();
-    this.emitText();
   }
 
   applyParagraphStyle(tag: string): void {
     document.execCommand('formatBlock', false, tag);
     this.updateActiveButtons();
-    this.emitText();
   }
 
   applyHeadingStyle(tag: string): void {
     document.execCommand('formatBlock', false, tag);
     this.updateActiveButtons();
-    this.emitText();
   }
 
   updateContent(event: any): void {
     // You can add additional functionalities here
     // For example, you can save the content to a variable for further processing.
-    this.emitText();
+    this.textChange.emit(event.target.innerHTML);
   }
   toggleActive(button: HTMLElement): void {
     button.classList.toggle('active');
     this.updateActiveButtons();
-    this.emitText();
   }
 
   updateActiveButtons(): void {
@@ -86,37 +82,23 @@ export class CustomEditorComponent {
   applyListStyle(command: string): void {
     document.execCommand(command, false, undefined);
     this.updateActiveButtons();
-    this.emitText();
   }
   changeTextSize(size: string): void {
     document.execCommand('fontSize', false, size);
     this.updateActiveButtons();
-    this.emitText();
   }
 
   changeTextColor(event: any = ''): void {
     document.execCommand('foreColor', false, event.target.value);
     this.updateActiveButtons();
-    this.emitText();
   }
   applyNumberedListStyle(): void {
     document.execCommand('insertOrderedList', false, undefined);
     this.updateActiveButtons();
-    this.emitText();
   }
 
   rollback(): void {
     document.execCommand('undo', false, undefined);
-    this.emitText();
   }
 
-  emitText(): void {
-    console.log(this.editorContent)
-    const text = this.editorContent?.nativeElement?.innerText;
-    
-    if (text) {
-        alert(text);
-        this.textChange.emit(text);
-    }
-  }
 }

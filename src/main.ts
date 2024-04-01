@@ -8,9 +8,7 @@ import { CustomEditorComponent } from './editor/custom-editor.component';
   standalone: true,
   imports: [CustomEditorComponent],
   template: `
-    <h1>Text Editor example</h1>
     <app-custom-editor (textChange)="name=$event"/>
-    {{name}}
   `,
 })
 export class App {
