@@ -9,11 +9,12 @@ import { CustomEditorComponent } from './editor/custom-editor.component';
   imports: [CustomEditorComponent],
   template: `
     <h1>Text Editor example</h1>
-    <app-custom-editor />
+    <app-custom-editor (textChange)="name=$event"/>
+    {{name}}
   `,
 })
 export class App {
-  name = 'Angular';
+  name = '';
 }
 
 bootstrapApplication(App);
